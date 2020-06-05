@@ -1,0 +1,33 @@
+﻿@model  WebApplication6.Student
+
+<table>
+    <thead>
+        <tr>
+            <td>Email</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Course Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="#">@Model.Email</a></td>
+            <td>@Model.FirstName</td>
+            <td>@Model.LastName</td>
+            <td>
+                <ul>
+                    @foreach(var t in Model.StudentsCourses)
+                    {
+                        <li>@t.Course.CourseName</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<style>
+    td {
+        border: 1px solid rgb(225, 225, 225)
+    }
+</style>
